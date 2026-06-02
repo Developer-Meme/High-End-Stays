@@ -29,6 +29,14 @@
 /* ── DARK THEME (default) ── */
 :root {
   --bg-primary: #0a0a0a;
+  --hero-bar-bg: rgba(10, 10, 10, 0.55);
+  --hero-bar-border: rgba(255, 255, 255, 0.15);
+  --hero-bar-divider: rgba(255, 255, 255, 0.12);
+  --hero-bar-label: rgba(255, 255, 255, 0.45);
+  --hero-bar-text: #ffffff;
+  --hero-bar-select-bg: #1a1a1a;
+  --hero-icon: #f59e0b;
+  --hero-date-scheme: dark;
   --bg-secondary: #171717;
   --bg-tertiary: #262626;
   --bg-card: rgba(23, 23, 23, 0.5);
@@ -50,6 +58,14 @@
 /* ── LIGHT THEME ── */
 .theme-light {
   --bg-primary: #fafafa;
+  --hero-bar-bg: rgba(255, 255, 255, 0.82);
+  --hero-bar-border: rgba(0, 0, 0, 0.12);
+  --hero-bar-divider: rgba(0, 0, 0, 0.1);
+  --hero-bar-label: #6b5a45;
+  --hero-bar-text: #1a1a1a;
+  --hero-bar-select-bg: #ffffff;
+  --hero-icon: #b45309;
+  --hero-date-scheme: light;
   --bg-secondary: #f0f0ef;
   --bg-tertiary: #e8e7e5;
   --bg-card: rgba(255, 255, 255, 0.8);
@@ -71,6 +87,14 @@
 /* ── ROYAL THEME (Black + Royal Purple + Gold) ── */
 .theme-royal {
   --bg-primary: #06030f;
+  --hero-bar-bg: rgba(13, 8, 32, 0.72);
+  --hero-bar-border: rgba(212, 175, 55, 0.25);
+  --hero-bar-divider: rgba(212, 175, 55, 0.15);
+  --hero-bar-label: rgba(184, 168, 208, 0.7);
+  --hero-bar-text: #f5f0e8;
+  --hero-bar-select-bg: #0d0820;
+  --hero-icon: #D4AF37;
+  --hero-date-scheme: dark;
   --bg-secondary: #0d0820;
   --bg-tertiary: #160e30;
   --bg-card: rgba(13, 8, 32, 0.7);

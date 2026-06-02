@@ -5,12 +5,14 @@ import logoImage from '@/assets/uploads/logo-clean.png';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
+  { label: 'Explore', href: '#explore' },
   { label: 'Amenities', href: '#amenities' },
   { label: 'Properties', href: '#listings-display' },
   { label: 'Virtual Tour', href: '#virtual-tour' },
   { label: 'Team', href: '#team' },
   { label: 'FAQs', href: '#faqs' },
   { label: 'Reviews', href: '#reviews' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export function Navbar() {
