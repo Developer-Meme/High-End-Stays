@@ -310,7 +310,7 @@ export function VirtualTour({ theme = 'default' }: VirtualTourProps) {
 
 			{/* Interaction hint */}
 			{!isInteracting && !isLoading &&
-      <div data-ev-id="ev_7339fa8ce8" className="absolute top-4 left-4 bg-black/60 backdrop-blur-sm rounded-full px-3 py-2 flex items-center gap-2">
+      <div data-ev-id="ev_7339fa8ce8" className="hidden md:flex absolute top-4 left-4 bg-black/60 backdrop-blur-sm rounded-full px-3 py-2 items-center gap-2">
 					<svg data-ev-id="ev_bcf7d15877" className="w-4 h-4 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path data-ev-id="ev_80d9679c96" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
 					</svg>

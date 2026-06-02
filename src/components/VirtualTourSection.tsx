@@ -115,7 +115,7 @@ export function VirtualTourSection() {
             Virtual 3D Tour
           </h2>
           <p className="text-base md:text-lg" style={{ color: 'var(--text-secondary)' }}>
-            Drag to look around. Auto-tour resumes when you let go.
+            Swipe or drag to look around. Auto-tour resumes when you let go.
           </p>
           <div className="w-12 h-0.5 mx-auto mt-6" style={{ backgroundColor: 'var(--accent)' }} />
         </div>
@@ -128,9 +128,10 @@ export function VirtualTourSection() {
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
             onPointerLeave={handlePointerUp}
+            style={{ touchAction: 'none' }}
           />
 
-          <div className="absolute top-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full text-xs uppercase tracking-wider" style={{ backgroundColor: 'rgba(0,0,0,0.7)', color: '#a3a3a3' }}>
+          <div className="hidden md:block absolute top-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full text-xs uppercase tracking-wider" style={{ backgroundColor: 'rgba(0,0,0,0.7)', color: '#a3a3a3' }}>
             Drag to Explore • Auto-Rotates
           </div>
 

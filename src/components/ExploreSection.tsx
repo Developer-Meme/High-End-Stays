@@ -71,7 +71,7 @@ const properties: Property[] = [
     reviews: 0,
     guests: 4,
     bedrooms: 2,
-    image: 'https://images.unsplash.com/photo-1600047508788-786f3865b0e3?w=600&q=75&auto=format',
+    image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=75&auto=format',
     comingSoon: true,
     amenities: ['wifi', 'lock', 'kitchen', 'power'],
   },

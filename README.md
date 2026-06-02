@@ -1,6 +1,47 @@
-# High End Stays BnB — Website
+# High End Stays BnB
 
-Premium BnB website for **High End Stays**, a luxury short-stay rental brand operating in **Eldoret** and **Meru, Kenya**.
+> Premium luxury short-stay rentals in **Eldoret** and **Meru, Kenya** — crafted for guests who expect more.
+
+🌐 **Live Site:** [high-end-stays.vercel.app](https://high-end-stays.vercel.app)
+
+---
+
+## 📸 Preview
+
+The site ships with **three switchable themes** — toggled via the icon in the navbar (Moon → Sun → Crown → repeat).
+
+### 👑 Royal Theme
+*Deep navy with gold accents — ultra-premium, regal aesthetic*
+
+![Royal Theme – Leadership Section](src/assets/uploads/screenshot-royal.png)
+
+---
+
+### 🌑 Dark Theme
+*Deep blacks with warm amber/orange — the signature luxury-dark look*
+
+![Dark Theme – FAQ Section](src/assets/uploads/screenshot-dark.png)
+
+---
+
+### ☀️ Light Theme
+*Warm off-white with charcoal text — clean, airy, editorial feel*
+
+![Light Theme – Contact Section](src/assets/uploads/screenshot-light.png)
+
+---
+
+## ✨ Features
+
+- **Three switchable themes** — Dark, Light, and Royal (toggled live, no reload)
+- **360° Virtual Tours** — Interactive WebGL panoramas powered by Three.js, touch-friendly on mobile
+- **Filterable property grid** — Browse listings by location (All / Eldoret / Meru)
+- **Detailed listing cards** — Price, amenities, ratings, and one-tap WhatsApp booking
+- **Responsive design** — Optimised for mobile, tablet, and desktop
+- **Smooth animations** — Staggered scroll reveals and micro-interactions throughout
+- **FAQ accordion** — Instant answers to common guest questions
+- **Book Your Stay form** — Direct inquiry with WhatsApp shortcuts
+- **Team section** — Contact Victor or William directly from the site
 
 ---
 
@@ -17,11 +58,14 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## 🏗️ Tech Stack
 
-- **React 18** + **TypeScript**
-- **Vite** — lightning-fast dev server & build tool
-- **Tailwind CSS v4** — utility-first styling
-- **React Router** — client-side routing
-- **Lucide React** — icon library
+| Tool | Purpose |
+|---|---|
+| **React 18** + **TypeScript** | UI framework |
+| **Vite** | Dev server & build tool |
+| **Tailwind CSS v4** | Utility-first styling |
+| **Three.js** | 360° WebGL panorama renderer |
+| **React Router** | Client-side routing |
+| **Lucide React** | Icon library |
 
 ---
 
@@ -30,99 +74,78 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 ```
 src/
 ├── components/
-│   ├── Navbar.tsx            # Sticky nav with theme switcher
-│   ├── HeroSection.tsx       # Hero slideshow + search bar
-│   ├── ExploreSection.tsx    # Filterable property grid (Eldoret / Meru)
-│   ├── AmenitiesSection.tsx  # Premium amenities showcase
-│   ├── ListingsSection.tsx   # Detailed property listings
-│   ├── VirtualTourSection.tsx
-│   ├── TeamSection.tsx       # Victor & William team cards
-│   ├── FAQSection.tsx        # Accordion FAQ
-│   ├── ReviewsSection.tsx    # Guest reviews
-│   ├── ContactSection.tsx    # Book Your Stay form + contact info
+│   ├── Navbar.tsx              # Sticky nav with theme switcher
+│   ├── HeroSection.tsx         # Full-screen slideshow + search bar
+│   ├── ExploreSection.tsx      # Filterable property grid (Eldoret / Meru)
+│   ├── AmenitiesSection.tsx    # Premium amenities showcase
+│   ├── ListingsSection.tsx     # Detailed listing cards with virtual tour
+│   ├── VirtualTour.tsx         # 360° WebGL panorama component
+│   ├── VirtualTourSection.tsx  # Standalone Virtual Tour section
+│   ├── TeamSection.tsx         # Victor & William team cards
+│   ├── FAQSection.tsx          # Accordion FAQ
+│   ├── ReviewsSection.tsx      # Guest testimonials
+│   ├── ContactSection.tsx      # Book Your Stay form + contact info
 │   ├── Footer.tsx
 │   └── MouseFollower.tsx
 ├── pages/
-│   └── index.tsx             # Main page — assembles all sections
+│   └── index.tsx               # Main page — assembles all sections
 ├── types/
 │   └── listings.ts
-├── assets/
-│   └── uploads/
-│       ├── logo.png
-│       └── logo-clean.png
-├── theme.css                 # Three themes (Dark / Light / Royal)
-├── App.css
-├── index.css
-├── providers.tsx             # Theme + Booking context
+├── assets/uploads/             # Logo + screenshot previews
+├── theme.css                   # Three themes (Dark / Light / Royal)
+├── providers.tsx               # Theme + Booking context
 └── main.tsx
 ```
 
 ---
 
-## 🎨 Three Themes
+## 🎨 Themes
 
-The site ships with **three switchable themes**, toggled via the button in the navbar (Moon → Sun → Crown → repeat).
-
-### 🌑 Dark Theme (Default)
-*Seen on the Amenities section.*
-
-Deep blacks (`#0a0a0a`) with warm amber/orange accents (`#d97706`). The signature luxury-dark look. White text on dark backgrounds, gold accent lines and buttons.
-
-**CSS class:** `:root` (no extra class needed)
+| Theme | Class on `<html>` | Background | Accent |
+|---|---|---|---|
+| 🌑 **Dark** (default) | *(none)* | `#0a0a0a` | Amber `#d97706` |
+| ☀️ **Light** | `.theme-light` | `#fafafa` | Deep amber `#b45309` |
+| 👑 **Royal** | `.theme-royal` | `#06030f` | Gold `#D4AF37` |
 
 ---
 
-### ☀️ Light Theme
-*Seen on the FAQ / Common Questions section.*
+## 🗺️ Page Sections
 
-Warm off-white backgrounds (`#fafafa`, `#f0f0ef`) with dark charcoal text and deep amber accents (`#b45309`). Clean, airy, editorial feel.
-
-**CSS class:** `.theme-light` on `<html>`
-
----
-
-### 👑 Royal Theme
-*Seen on the Leadership / Team section.*
-
-Near-black with royal purple undertones (`#06030f`, `#0d0820`), gold accents (`#D4AF37`), and purple glow effects. Ultra-premium, regal aesthetic.
-
-**CSS class:** `.theme-royal` on `<html>`
-
----
-
-## 🗺️ Sections (Page Order)
-
-| Section | ID | Description |
+| Section | Nav Link | Description |
 |---|---|---|
-| Hero | `#home` | Full-screen slideshow + search bar |
-| Explore | `#explore` | Filterable property cards by location |
-| Amenities | `#amenities` | 6 key amenity highlights |
-| Properties | `#listings-display` | Detailed listing cards with virtual tour |
-| Virtual Tour | `#virtual-tour` | Interactive 360° preview |
-| Team | `#team` | Victor & William contact cards |
-| FAQs | `#faqs` | Accordion FAQ |
-| Reviews | `#reviews` | Guest testimonials |
-| Contact | `#contact` | Book Your Stay form + contact info |
+| Hero | HOME | Full-screen slideshow + location search |
+| Explore | EXPLORE | Filterable property cards by city |
+| Amenities | AMENITIES | 6 premium amenity highlights |
+| Properties | PROPERTIES | Listing cards with inline 360° tours |
+| Virtual Tour | VIRTUAL TOUR | Standalone 360° room explorer |
+| Team | TEAM | Victor & William with direct contact |
+| FAQs | FAQS | Accordion-style common questions |
+| Reviews | REVIEWS | Verified guest testimonials |
+| Contact | CONTACT | Booking inquiry form + WhatsApp |
 
 ---
 
-## 📍 Locations
+## 📍 Properties
 
-| City | Properties | Status |
-|---|---|---|
-| **Eldoret** | Pioneer Heights, MTRH Executive, Family Haven | ✅ Live |
-| **Eldoret** | City View Penthouse | 🔜 Coming Soon |
-| **Meru** | Makutano Premium, Mt. Kenya Royal Suite | ✅ Live |
-| **Meru** | Garden Retreat, Forest Edge Lodge | 🔜 Coming Soon |
+| Location | Property | Type | Price | Status |
+|---|---|---|---|---|
+| Eldoret | Pioneer Heights | Studio | KES 8,500/night | ✅ Live |
+| Eldoret | MTRH Executive | Studio | KES 7,500/night | ✅ Live |
+| Eldoret | Family Haven | 2-Bedroom | KES 12,000/night | ✅ Live |
+| Eldoret | City View Penthouse | Penthouse | KES 18,000/night | 🔜 Coming Soon |
+| Meru | Makutano Premium | Studio | KES 9,000/night | ✅ Live |
+| Meru | Mt. Kenya Royal Suite | Luxury | KES 15,000/night | ✅ Live |
+| Meru | Garden Retreat | Villa | — | 🔜 Coming Soon |
+| Meru | Forest Edge Lodge | Lodge | — | 🔜 Coming Soon |
 
 ---
 
 ## 📞 Contact
 
-| Person | Role | Phone | WhatsApp |
+| | Name | Phone | WhatsApp |
 |---|---|---|---|
-| **Victor Meme** | Guest Experience Lead | +254 705 688 344 | [wa.me/254705688344](https://wa.me/254705688344) |
-| **William Kinyeru** | Operations & Growth Lead | +254 792 003 602 | [wa.me/254792003602](https://wa.me/254792003602) |
+| Guest Experience | **Victor Meme** | +254 705 688 344 | [wa.me/254705688344](https://wa.me/254705688344) |
+| Operations | **William Kinyeru** | +254 792 003 602 | [wa.me/254792003602](https://wa.me/254792003602) |
 
 📧 **Email:** highendstays@gmail.com  
 📍 **Locations:** Eldoret & Meru, Kenya
@@ -135,9 +158,9 @@ Near-black with royal purple undertones (`#06030f`, `#0d0820`), gold accents (`#
 npm run build
 ```
 
-Output goes to `dist/`. Deploy to any static hosting (Netlify, Vercel, Cloudflare Pages, etc.).
+Output goes to `dist/`. Deploy to any static host — Vercel, Netlify, or Cloudflare Pages.
 
 ---
 
-© 2026 High-End Stays BnB. All Rights Reserved.  
+© 2026 High End Stays BnB. All Rights Reserved.  
 Designed & Developed by **Victor Meme**.
