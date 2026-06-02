@@ -110,15 +110,10 @@ export function ListingsSection() {
               onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--border-color)')}
             >
               <div className="relative aspect-[16/10] w-full">
-                <VirtualTour theme={listing.theme === 'luxury-dark' ? 'luxury-dark' : 'default'} />
-                {listing.isFeatured && (
-                  <div
-                    className="absolute top-4 right-4 px-3 py-1.5 text-xs font-semibold text-white"
-                    style={{ backgroundColor: 'var(--accent)' }}
-                  >
-                    FEATURED
-                  </div>
-                )}
+                <VirtualTour
+                  theme={listing.theme === 'luxury-dark' ? 'luxury-dark' : 'default'}
+                  isFeatured={!!listing.isFeatured}
+                />
               </div>
 
               <div className="p-5 md:p-6">
